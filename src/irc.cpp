@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2011-2012 Litecoin Developers
-// Copyright (c) 2013 Luckycoin Developers
+// Copyright (c) 2013 Bells Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -295,14 +295,14 @@ void ThreadIRCSeed2(void* parg)
         }
         
         if (fTestNet) {
-            Send(hSocket, "JOIN #luckycoinTEST3\r");
-            Send(hSocket, "WHO #luckycoinTEST3\r");
+            Send(hSocket, "JOIN #bellsTEST3\r");
+            Send(hSocket, "WHO #bellsTEST3\r");
         } else {
-            // randomly join #luckycoin00-#luckycoin99
+            // randomly join #bells00-#bells99
             int channel_number = GetRandInt(100);
-            channel_number = 0; // Luckycoin: for now, just use one channel
-            Send(hSocket, strprintf("JOIN #luckycoin%02d\r", channel_number).c_str());
-            Send(hSocket, strprintf("WHO #luckycoin%02d\r", channel_number).c_str());
+            channel_number = 0; // Bells: for now, just use one channel
+            Send(hSocket, strprintf("JOIN #bells%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("WHO #bells%02d\r", channel_number).c_str());
         }
 
         int64 nStart = GetTime();
